@@ -1,0 +1,121 @@
+Imports OK
+Period : 2024-01-17 00:00:00 → 2024-01-19 17:00:00
+Point  : 38.8N, 76.0W
+Hub Ht : 100.0 m AGL
+Opening YSU dataset...
+Opening MYNN dataset...
+  Dropping 17 duplicate timesteps
+
+YSU  timesteps: 97  (2024-01-16T00:00:00.000000000 → 2024-01-20T00:00:00.000000000)
+MYNN timesteps: 90  (2024-01-16T00:00:00.000000000 → 2024-01-19T17:00:00.000000000)
+Helper functions ready.
+YSU nearest point:
+  Nearest grid: j=58, i=58  → 38.800N, -76.000E
+
+YSU  in window: 66 timesteps
+MYNN in window: 66 timesteps
+
+Loading ERA5 100-m wind reference...
+  Nearest ERA5 point: 38.750N, -76.000E
+  ERA5 100m mean (in window) = 5.73 m/s
+  ERA5 timesteps in window   = 66
+
+Extracting WRF hub-height time series...
+YSU  100m mean = 7.35 m/s
+MYNN 100m mean = 7.23 m/s
+ERA5 100m mean = 5.73 m/s
+
+Plot 0: Domain map...
+  Saved: plot0_domain_map.png
+Plot 1: Time series with ERA5 reference...
+  Saved: plot1_timeseries_100m_wind.png
+Extracting vertical profiles...
+  YSU  at 100.0m : 7.35 m/s
+  MYNN at 100.0m : 7.23 m/s
+  ERA5 at 100.0m : 5.73 m/s
+Plot 2: Vertical profile...
+  Saved: plot2_vertical_profile.png
+
+Extracting spatial hub-height maps (vectorized)...
+YSU:
+  Computing 3-D height field...
+  Destaggering U...
+  Destaggering V...
+  Interpolating to 100.0 m AGL across domain...
+    timestep 10/66
+    timestep 20/66
+    timestep 30/66
+    timestep 40/66
+    timestep 50/66
+    timestep 60/66
+MYNN:
+  Computing 3-D height field...
+  Destaggering U...
+  Destaggering V...
+  Interpolating to 100.0 m AGL across domain...
+    timestep 10/66
+    timestep 20/66
+    timestep 30/66
+    timestep 40/66
+    timestep 50/66
+    timestep 60/66
+
+Domain-mean diff (MYNN−YSU): -0.229 m/s
+Plot 3: Spatial maps...
+  Saved: plot3_spatial_maps.png
+Plot 4: Time-height cross section...
+  Saved: plot4_timeheight.png
+
+Comparison vs ERA5 100m:
+  YSU  MAE=2.24  MBE=+1.63  RMSE=2.71 m/s
+  MYNN MAE=1.82  MBE=+1.51  RMSE=2.24 m/s
+  Closer to ERA5: MYNN2.5
+Plot 5: Bias vs ERA5 reference...
+  Saved: plot5_bias_vs_era5.png
+
+============================================================
+SUMMARY STATISTICS
+============================================================
+
+--- Inter-scheme comparison ---
+YSU  mean 100m wind : 7.35 m/s
+MYNN mean 100m wind : 7.23 m/s
+ERA5 mean 100m wind : 5.73 m/s
+Mean bias (YSU−MYNN): +0.12 m/s
+MAD (|YSU−MYNN|)    : 1.01 m/s
+Max |diff|          : 3.96 m/s
+
+--- Comparison vs ERA5 100m ---
+YSU  MAE  : 2.24 m/s
+MYNN MAE  : 1.82 m/s
+YSU  MBE  : +1.63 m/s
+MYNN MBE  : +1.51 m/s
+YSU  RMSE : 2.71 m/s
+MYNN RMSE : 2.24 m/s
+Closer to ERA5: MYNN2.5
+
+--- Hours below the 4 m/s low-wind threshold (66 h window) ---
+ERA5 : 19
+YSU  : 10
+MYNN : 6
+
+--- Profile at hub height ---
+YSU  at 100m : 7.35 m/s
+MYNN at 100m : 7.23 m/s
+ERA5 at 100m : 5.73 m/s
+
+--- Spatial domain ---
+Domain-mean diff (MYNN−YSU): -0.229 m/s
+
+--- Hypothesis assessment ---
+Inter-scheme MAD ≥ 1 m/s  : SUPPORTED  [MAD=1.01]
+Comparison with ERA5       : MYNN2.5 is closer
+============================================================
+
+All plots saved:
+  plot0_domain_map.png
+  plot1_timeseries_100m_wind.png
+  plot2_vertical_profile.png
+  plot3_spatial_maps.png
+  plot4_timeheight.png
+  plot5_bias_vs_era5.png

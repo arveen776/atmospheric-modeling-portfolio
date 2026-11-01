@@ -1,0 +1,11 @@
+# Versions used to regenerate the published results (Python 3.13).
+numpy==2.2.6
+pandas==2.3.1
+scipy
+xarray==2026.1.0
+netCDF4
+matplotlib==3.10.3
+cartopy==0.25.0
+cfgrib==0.9.15.1  # Project 01 only: reads the ERA5 GRIB file
+pillow            # Project 02 only: writes the animated GIF
+jupyter           # Projects 03 and 04: notebooks

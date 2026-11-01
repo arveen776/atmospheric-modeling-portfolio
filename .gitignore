@@ -1,0 +1,24 @@
+# Raw model output and input data are too large for Git. See docs/DATA.md.
+data/
+wrfout_*
+met_em*
+geo_em*
+*.nc
+*.grib
+*.grib2
+*.idx
+*.tar
+*.tar.gz
+
+# Python
+__pycache__/
+*.pyc
+.venv*/
+.ipynb_checkpoints/
+
+# Temporary animation frames
+figures/_animation_frames/
+
+# Operating system
+Thumbs.db
+.DS_Store
